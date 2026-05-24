@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +25,16 @@ function Navbar() {
   return (
     <header className={isScrolled ? 'navbar scrolled' : 'navbar'}>
       <a className="nav-brand" href="#top" aria-label="Naturals home">
-        Naturals
+        {logoFailed ? (
+          <span className="nav-logo-fallback">Naturals</span>
+        ) : (
+          <img
+            className="nav-logo"
+            src="/images/naturals-logo.png"
+            alt="Naturals Logo"
+            onError={() => setLogoFailed(true)}
+          />
+        )}
       </a>
       <button
         className={isOpen ? 'menu-toggle open' : 'menu-toggle'}
