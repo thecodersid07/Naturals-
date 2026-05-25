@@ -78,17 +78,17 @@ textarea {
   letter-spacing: 0;
 }
 
-.nav-logo {
+.navbar-logo {
   display: block;
   width: auto;
-  height: clamp(42px, 5vw, 58px);
+  height: 58px;
   max-width: 180px;
   object-fit: contain;
   filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.26));
   transition: transform 220ms ease, filter 220ms ease;
 }
 
-.nav-brand:hover .nav-logo {
+.nav-brand:hover .navbar-logo {
   transform: translateY(-1px) scale(1.03);
   filter: drop-shadow(0 12px 26px rgba(168, 85, 247, 0.3));
 }
@@ -98,6 +98,12 @@ textarea {
   font-size: clamp(1.45rem, 2vw, 1.8rem);
   font-weight: 900;
   line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 42px;
+  }
 }
 
 .nav-links {
@@ -1030,6 +1036,11 @@ textarea {
 @media (max-width: 640px) {
   .navbar {
     padding: 0.85rem 1rem;
+  }
+
+  .navbar-logo {
+    height: 42px;
+    max-width: 145px;
   }
 
   .menu-toggle {
@@ -2127,5 +2138,505 @@ body {
   .service-card,
   .service-card-content {
     min-height: 300px;
+  }
+}
+
+/* Screenshot-inspired Naturals homepage polish */
+.navbar {
+  min-height: 88px;
+  padding: 0.8rem clamp(1rem, 3vw, 1.75rem);
+  background: rgba(4, 4, 8, 0.96);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.16);
+}
+
+.navbar-logo {
+  height: 64px;
+  max-width: 176px;
+  border-radius: 3px;
+  object-fit: contain;
+}
+
+.nav-links {
+  flex: 1 1 auto;
+  justify-content: center;
+  gap: clamp(1.3rem, 2.6vw, 2.25rem);
+  color: #f4ecff;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nav-links a:first-child {
+  color: var(--purple-600);
+}
+
+.nav-links a:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.1rem;
+  height: 3px;
+  background: var(--purple-600);
+}
+
+.nav-appointment {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid rgba(168, 85, 247, 0.72);
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 220ms ease, transform 220ms ease, border-color 220ms ease;
+}
+
+.nav-appointment:hover {
+  border-color: var(--gold);
+  background: rgba(124, 58, 237, 0.18);
+  transform: translateY(-1px);
+}
+
+.hero {
+  min-height: calc(100vh - 88px);
+  background:
+    linear-gradient(90deg, rgba(4, 4, 8, 0.92), rgba(8, 4, 13, 0.78) 45%, rgba(8, 4, 13, 0.2)),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1800&q=84"),
+    linear-gradient(135deg, #08040D, #3B0A57);
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-content {
+  width: min(940px, 100%);
+  margin-left: clamp(0rem, 2vw, 2rem);
+}
+
+.eyebrow {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  letter-spacing: 0.22em;
+}
+
+.hero h1 {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: 1.55rem;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.1rem, 6.4vw, 6rem);
+  font-weight: 700;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  color: #ffffff;
+}
+
+.hero h1 .hero-highlight {
+  color: var(--purple-600);
+}
+
+.tagline {
+  max-width: 430px;
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 3px solid var(--gold);
+  color: #f7f1ff;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  line-height: 1.55;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+}
+
+.button.primary {
+  min-width: 320px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #4c1674, #7C3AED);
+  color: #ffffff;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.button.secondary,
+.hero-badges {
+  display: none;
+}
+
+.services-section .section-heading {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.services-section .section-heading p {
+  justify-content: center;
+  color: var(--purple-600);
+}
+
+.services-section .section-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.services-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.service-card {
+  min-height: 315px;
+  border-color: rgba(168, 85, 247, 0.46);
+  border-radius: 9px;
+}
+
+.service-card-content {
+  align-items: center;
+  min-height: 315px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.service-icon {
+  width: 54px;
+  height: 54px;
+  margin: auto 0 0.65rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3B0A57, #7C3AED);
+  color: #ffffff;
+}
+
+.service-card h3 {
+  max-width: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.service-card p {
+  min-height: 2.8rem;
+  margin: 0.45rem 0 0;
+  color: #f4ecff;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.service-card-content a {
+  margin-top: 0.65rem;
+  color: var(--purple-600);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.signature-service-groups,
+.rate-card-panel {
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+@media (max-width: 1180px) {
+  .nav-appointment {
+    display: none;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: 72px;
+  }
+
+  .navbar-logo {
+    height: 42px;
+    max-width: 132px;
+  }
+
+  .hero {
+    min-height: 720px;
+    background-position: center right;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 13vw, 4.2rem);
+  }
+
+  .button.primary {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .nav-links a:first-child::after {
+    display: none;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Naturals Signature brochure-inspired upgrades */
+.membership-section {
+  padding: clamp(4.5rem, 8vw, 7rem) clamp(1rem, 5vw, 4rem);
+  background:
+    radial-gradient(circle at 82% 10%, rgba(168, 85, 247, 0.14), transparent 26rem),
+    linear-gradient(180deg, #08040D, #12081C 54%, #08040D);
+}
+
+.membership-section > *,
+.signature-service-groups {
+  width: min(1180px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signature-service-groups {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.4rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.signature-service-group {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.5fr);
+  gap: clamp(1.25rem, 4vw, 2rem);
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(59, 10, 87, 0.42), rgba(18, 8, 28, 0.96)),
+    var(--card-black);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+}
+
+.signature-group-visual,
+.signature-category-image,
+.membership-image {
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(59, 10, 87, 0.9), rgba(168, 85, 247, 0.3)),
+    var(--card-black-soft);
+}
+
+.signature-group-visual {
+  min-height: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.signature-group-visual img,
+.signature-category-image img,
+.membership-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 420ms ease, filter 420ms ease;
+}
+
+.signature-service-group:hover img,
+.signature-category-card:hover img,
+.membership-card:hover img {
+  transform: scale(1.035);
+  filter: saturate(0.98) contrast(1.04);
+}
+
+.signature-group-content {
+  min-width: 0;
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.signature-group-content > span,
+.membership-card-copy span {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--gold-soft);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signature-group-content h3,
+.membership-card-copy h3 {
+  margin: 0.65rem 0 0;
+  color: var(--ink);
+  font-size: clamp(1.85rem, 4vw, 3.3rem);
+  line-height: 1;
+}
+
+.signature-group-content p,
+.membership-content > p,
+.membership-card-copy p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.signature-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.signature-category-card,
+.membership-benefit-card,
+.membership-card {
+  min-width: 0;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(26, 13, 39, 0.96), rgba(18, 8, 28, 0.98)),
+    var(--card-black);
+  box-shadow: var(--shadow);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.signature-category-card {
+  overflow: hidden;
+}
+
+.signature-category-card:hover,
+.membership-benefit-card:hover,
+.membership-card:hover {
+  border-color: rgba(212, 175, 55, 0.42);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.signature-category-image {
+  aspect-ratio: 16 / 11;
+}
+
+.signature-category-card strong {
+  display: block;
+  padding: 0.9rem;
+  color: var(--ink);
+  font-size: 0.94rem;
+  line-height: 1.25;
+}
+
+.membership-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.8fr);
+  gap: clamp(1.5rem, 5vw, 3rem);
+  align-items: center;
+}
+
+.membership-content .section-heading {
+  margin-bottom: 1.4rem;
+}
+
+.membership-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.membership-benefit-card {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+}
+
+.membership-benefit-card span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--gold);
+}
+
+.membership-benefit-card strong {
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.membership-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.membership-ribbon {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 2;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+  color: #16091e;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.membership-image {
+  aspect-ratio: 4 / 3;
+}
+
+.membership-card-copy {
+  padding: 1.35rem;
+}
+
+@media (max-width: 1020px) {
+  .signature-service-group,
+  .membership-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-group-visual {
+    min-height: 320px;
+    aspect-ratio: 16 / 8;
+  }
+
+  .signature-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .membership-section {
+    padding: 4rem 1rem;
+  }
+
+  .signature-category-grid,
+  .membership-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-group-visual {
+    min-height: 240px;
   }
 }

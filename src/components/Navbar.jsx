@@ -29,10 +29,13 @@ function Navbar() {
           <span className="nav-logo-fallback">Naturals</span>
         ) : (
           <img
-            className="nav-logo"
+            className="navbar-logo"
             src="/images/naturals-logo.png"
             alt="Naturals Logo"
-            onError={() => setLogoFailed(true)}
+            onError={(event) => {
+              event.currentTarget.style.display = 'none';
+              setLogoFailed(true);
+            }}
           />
         )}
       </a>
@@ -48,13 +51,18 @@ function Navbar() {
         <span></span>
       </button>
       <nav className={isOpen ? 'nav-links open' : 'nav-links'} aria-label="Primary navigation">
-        <a href="#branches" onClick={closeMenu}>Branches</a>
-        <a href="#franchise-story" onClick={closeMenu}>Story</a>
+        <a href="#top" onClick={closeMenu}>Home</a>
+        <a href="#franchise-story" onClick={closeMenu}>About Us</a>
         <a href="#services" onClick={closeMenu}>Services</a>
-        <a href="#products" onClick={closeMenu}>Products</a>
-        <a href="#smile-providers" onClick={closeMenu}>Team</a>
-        <a href="#contact" onClick={closeMenu}>Contact</a>
+        <a href="#services" onClick={closeMenu}>Bridal</a>
+        <a href="#franchise-story" onClick={closeMenu}>Franchise</a>
+        <a href="#products" onClick={closeMenu}>Gallery</a>
+        <a href="#smile-providers" onClick={closeMenu}>Careers</a>
+        <a href="#contact" onClick={closeMenu}>Contact Us</a>
       </nav>
+      <a className="nav-appointment" href="#contact" onClick={closeMenu}>
+        Book Appointment
+      </a>
     </header>
   );
 }

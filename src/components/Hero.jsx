@@ -2,9 +2,12 @@ function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-content">
-        <p className="eyebrow">Naturals</p>
-        <p className="tagline">World&rsquo;s Fastest Growing Salon</p>
-        <h1>Premium Salon Experiences Across Chennai</h1>
+        <p className="eyebrow">India&rsquo;s No.1 Hair and Beauty Salon</p>
+        <h1>
+          <span>Experience</span>
+          <span className="hero-highlight">The Art of Beauty</span>
+        </h1>
+        <p className="tagline">Premium services. Expert care. Unmatched experience.</p>
         <div className="hero-actions">
           <a className="button primary" href="#contact">
             Book Appointment

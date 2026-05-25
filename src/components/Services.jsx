@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { rateCards, services } from '../data/services.js';
+import { rateCards, services, signatureServiceGroups } from '../data/services.js';
 
 function Services() {
   const [activeTab, setActiveTab] = useState(rateCards[0].name);
@@ -27,6 +27,45 @@ function Services() {
             <div className="service-card-content">
               <span className="service-icon">{service.name.slice(0, 2)}</span>
               <h3>{service.name}</h3>
+              <p>{service.description}</p>
+              <a href="#contact">Explore <span>→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="signature-service-groups">
+        {signatureServiceGroups.map((group) => (
+          <article className="signature-service-group" key={group.label}>
+            <div className="signature-group-visual">
+              <img
+                src={group.image}
+                alt={`${group.label} at Naturals Signature`}
+                onError={(event) => {
+                  event.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+            <div className="signature-group-content">
+              <span>{group.label}</span>
+              <h3>{group.title}</h3>
+              <p>{group.description}</p>
+              <div className="signature-category-grid">
+                {group.categories.map((category) => (
+                  <div className="signature-category-card" key={`${group.label}-${category.name}`}>
+                    <div className="signature-category-image">
+                      <img
+                        src={category.image}
+                        alt={category.name}
+                        onError={(event) => {
+                          event.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <strong>{category.name}</strong>
+                  </div>
+                ))}
+              </div>
             </div>
           </article>
         ))}
