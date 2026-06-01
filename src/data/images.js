@@ -1,9 +1,9 @@
 // Replace these temporary internet images with actual client/product photos later.
 export const imageSources = {
   branches: {
-    perumbakkam: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1200&q=82',
-    sholinganallur: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=1200&q=82',
-    ecrLinkRoad: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=82',
+    perumbakkam: '/images/naturals-perumbakkam.jpg',
+    sholinganallur: '/images/naturals-sholinganallur.jpg',
+    ecrLinkRoad: '/images/naturals-ecr-link-road.png',
     nookampalayam: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1200&q=82',
   },
   services: {

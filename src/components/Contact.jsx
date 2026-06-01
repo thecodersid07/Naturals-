@@ -5,7 +5,6 @@ const serviceOptions = [
   "Hair Care",
   "Skin Care",
   "Body Care",
-  "Bridal Makeup",
   "Nail Care",
   "Men’s Grooming",
   "Product Enquiry",

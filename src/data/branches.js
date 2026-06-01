@@ -18,6 +18,7 @@ const branches = [
     name: 'Naturals - ECR Link Road',
     area: 'ECR Link Road',
     image: imageSources.branches.ecrLinkRoad,
+    imageAlt: 'Naturals ECR Link Road Branch',
   },
   {
     id: 4,

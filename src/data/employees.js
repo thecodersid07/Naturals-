@@ -29,8 +29,8 @@ const employees = [
   },
   {
     name: 'Team Member 05',
-    role: 'Bridal Makeup Specialist',
-    specialty: 'Bridal looks, party makeup, and draping',
+    role: 'Makeup Specialist',
+    specialty: 'Party makeup, styling, and draping',
     experience: '9+ years',
     description: 'Designs elegant occasion looks that feel premium, comfortable, and camera ready.',
   },

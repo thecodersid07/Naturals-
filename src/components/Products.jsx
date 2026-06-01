@@ -2,11 +2,11 @@ import { productPromises, products } from '../data/products.js';
 
 function Products() {
   return (
-    <section className="products-section" id="products">
+    <section className="products-section" id="social-media">
       <div className="products-layout">
         <div className="section-heading">
-          <p>Products</p>
-          <h2>Professional Products We Use</h2>
+          <p>Social Media</p>
+          <h2>Follow the Naturals Experience</h2>
         </div>
         <div className="product-copy">
           <p>

@@ -1,12 +1,12 @@
 const founders = [
   {
     name: 'Priya Arun',
-    role: 'Franchise Partner',
+    role: 'Salon Partner',
     bio: 'Priya Arun built her early career with Standard Chartered Bank, Ford India, and Tech Mahindra, where she developed a strong understanding of people, operating systems, and customer experience.',
   },
   {
     name: 'Arun Asok',
-    role: 'Franchise Partner',
+    role: 'Salon Partner',
     bio: 'Arun Asok brought valuable experience from the insurance sector through his work with Aviva Life Insurance and Max Life Insurance, adding depth in service, trust, and relationship building.',
   },
 ];
@@ -29,20 +29,18 @@ const milestones = [
     title: 'Naturals, Nookampalayam',
   },
   {
-    year: 'International',
-    title: 'Naturals Women’s Salon, Al Nahda, Dubai',
+    year: '2025',
+    title: 'International Expansion (Dubai)',
   },
 ];
 
-const cornerItems = ['Their Story', 'Rate Card', 'Service Card', 'Products', 'Smile Providers'];
-
-function FranchiseStory() {
+function AboutUs() {
   return (
-    <section className="franchise-story" id="franchise-story">
+    <section className="franchise-story" id="about-us">
       <div className="story-intro">
         <div className="section-heading">
-          <p>Franchise Partner Story</p>
-          <h2>From Corporate Careers to Customer-Centric Salons</h2>
+          <p>About Us</p>
+          <h2>From Corporate Paths to Customer-Centric Salons</h2>
         </div>
         <p className="story-copy">
           Priya Arun and Arun Asok transitioned from successful professional careers into
@@ -76,21 +74,8 @@ function FranchiseStory() {
         </div>
       </div>
 
-      <div className="franchisee-corner">
-        <div className="section-heading compact-heading">
-          <p>Franchisee Corner</p>
-          <h2>Explore the Essentials</h2>
-        </div>
-        <div className="corner-grid">
-          {cornerItems.map((item) => (
-            <article className="corner-card" key={item}>
-              <h3>{item}</h3>
-            </article>
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
 
-export default FranchiseStory;
+export default AboutUs;

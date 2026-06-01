@@ -37,7 +37,7 @@ export const services = [
     description: 'Nail care, polish and art with finesse.',
   },
   {
-    name: 'Bridal Makeovers',
+    name: 'Bridal Makeup',
     image: imageSources.services.bridalMakeup,
     description: 'Elegant bridal looks for your big day.',
   },

@@ -13,7 +13,7 @@ function Branches() {
             <div className="branch-image">
               <img
                 src={branch.image}
-                alt={`${branch.name} salon`}
+                alt={branch.imageAlt ?? `${branch.name} salon`}
                 onError={(event) => {
                   event.currentTarget.style.display = 'none';
                 }}

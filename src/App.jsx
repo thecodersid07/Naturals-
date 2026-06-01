@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Hero from './components/Hero.jsx';
 import Branches from './components/Branches.jsx';
-import FranchiseStory from './components/FranchiseStory.jsx';
+import AboutUs from './components/AboutUs.jsx';
 import Services from './components/Services.jsx';
 import Membership from './components/Membership.jsx';
 import Products from './components/Products.jsx';
@@ -14,7 +14,7 @@ import Footer from './components/Footer.jsx';
 function App() {
   useEffect(() => {
     const revealItems = document.querySelectorAll(
-      'section, .branch-card, .founder-card, .timeline-item, .corner-card, .service-card, .signature-service-group, .signature-category-card, .membership-benefit-card, .membership-card, .product-card, .employee-card, .rate-card-panel, .contact-form'
+      'section, .branch-card, .founder-card, .timeline-item, .service-card, .signature-service-group, .signature-category-card, .membership-benefit-card, .membership-card, .product-card, .employee-card, .contact-form'
     );
 
     const observer = new IntersectionObserver(
@@ -48,7 +48,7 @@ function App() {
       <main>
         <Hero />
         <Branches />
-        <FranchiseStory />
+        <AboutUs />
         <Services />
         <Membership />
         <Products />

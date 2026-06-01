@@ -3,11 +3,11 @@ import { imageSources } from '../data/images.js';
 
 function SmileProviders() {
   return (
-    <section className="smile-section" id="smile-providers">
+    <section className="smile-section" id="recruitment">
       <div className="smile-intro">
         <div className="section-heading">
-          <p>Smile Providers</p>
-          <h2>The People Behind Every Beautiful Visit</h2>
+          <p>Recruitment</p>
+          <h2>Join the People Behind Every Beautiful Visit</h2>
         </div>
         <p>
           At Naturals, stylists and technicians are called Smile Providers because their
@@ -27,7 +27,6 @@ function SmileProviders() {
                   event.currentTarget.style.display = 'none';
                 }}
               />
-              <span>{employee.role.charAt(0)}</span>
             </div>
             <div className="employee-details">
               <span>{employee.experience}</span>
