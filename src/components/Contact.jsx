@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import branches from '../data/branches.js';
+import { useState } from "react";
+import branches from "../data/branches.js";
 
 const serviceOptions = [
-  'Hair Care',
-  'Skin Care',
-  'Body Care',
-  'Bridal Makeup',
-  'Nail Care',
-  'Men’s Grooming',
-  'Product Enquiry',
+  "Hair Care",
+  "Skin Care",
+  "Body Care",
+  "Bridal Makeup",
+  "Nail Care",
+  "Men’s Grooming",
+  "Product Enquiry",
 ];
 
 const initialForm = {
-  fullName: '',
-  phone: '',
-  branch: '',
-  service: '',
-  preferredDate: '',
-  message: '',
+  fullName: "",
+  phone: "",
+  branch: "",
+  service: "",
+  preferredDate: "",
+  message: "",
 };
 
 function Contact() {
@@ -39,23 +39,23 @@ function Contact() {
     const phonePattern = /^[0-9+\-\s()]{7,15}$/;
 
     if (!formData.fullName.trim()) {
-      nextErrors.fullName = 'Please enter your full name.';
+      nextErrors.fullName = "Please enter your full name.";
     }
 
     if (!phonePattern.test(formData.phone.trim())) {
-      nextErrors.phone = 'Please enter a valid phone number.';
+      nextErrors.phone = "Please enter a valid phone number.";
     }
 
     if (!formData.branch) {
-      nextErrors.branch = 'Please select a branch.';
+      nextErrors.branch = "Please select a branch.";
     }
 
     if (!formData.service) {
-      nextErrors.service = 'Please select a service.';
+      nextErrors.service = "Please select a service.";
     }
 
     if (!formData.preferredDate) {
-      nextErrors.preferredDate = 'Please choose a preferred date.';
+      nextErrors.preferredDate = "Please choose a preferred date.";
     }
 
     return nextErrors;
@@ -81,8 +81,8 @@ function Contact() {
             <h2>Book Your Naturals Experience</h2>
           </div>
           <p>
-            Share your preferred branch, service, and visit date. Our team will help you
-            choose the right appointment slot and salon expert.
+            Share your preferred branch, service, and visit date. Our team will
+            help you choose the right appointment slot and salon expert.
           </p>
           <div className="contact-actions">
             <a href="https://wa.me/910000000000" aria-label="WhatsApp Naturals">
@@ -127,7 +127,12 @@ function Contact() {
 
           <div className="form-field">
             <label htmlFor="branch">Select Branch</label>
-            <select id="branch" name="branch" onChange={handleChange} value={formData.branch}>
+            <select
+              id="branch"
+              name="branch"
+              onChange={handleChange}
+              value={formData.branch}
+            >
               <option value="">Choose branch</option>
               {branches.map((branch) => (
                 <option key={branch.id} value={branch.name}>
@@ -184,7 +189,9 @@ function Contact() {
           </button>
 
           {submitted && (
-            <p className="success-message">Thank you! Our team will contact you shortly.</p>
+            <p className="success-message">
+              Thank you! Our team will contact you shortly.
+            </p>
           )}
         </form>
       </div>

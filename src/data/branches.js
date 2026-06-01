@@ -21,7 +21,7 @@ const branches = [
   },
   {
     id: 4,
-    name: 'Naturals Signature - Nookampalayam (PENS)',
+    name: 'Naturals Signature - Nookampalayam',
     area: 'Nookampalayam',
     image: imageSources.branches.nookampalayam,
   },

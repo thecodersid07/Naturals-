@@ -2,7 +2,7 @@ function Hero() {
   return (
     <section className="hero" id="top">
       <div className="hero-content">
-        <p className="eyebrow">India&rsquo;s No.1 Hair and Beauty Salon</p>
+        <p className="eyebrow">World&rsquo;s Fastest Growing Salon Chain</p>
         <h1>
           <span>Experience</span>
           <span className="hero-highlight">The Art of Beauty</span>
