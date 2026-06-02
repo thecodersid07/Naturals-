@@ -1,52 +1,102 @@
 const founders = [
   {
     name: 'Priya Arun',
-    role: 'Salon Partner',
-    bio: 'Priya Arun built her early career with Standard Chartered Bank, Ford India, and Tech Mahindra, where she developed a strong understanding of people, operating systems, and customer experience.',
+    role: 'Franchise Partner',
+    points: [
+      'Corporate experience with Standard Chartered Bank, Ford India, and Tech Mahindra',
+      'Brings a people-first approach to service, systems, and customer experience',
+    ],
   },
   {
     name: 'Arun Asok',
-    role: 'Salon Partner',
-    bio: 'Arun Asok brought valuable experience from the insurance sector through his work with Aviva Life Insurance and Max Life Insurance, adding depth in service, trust, and relationship building.',
+    role: 'Franchise Partner',
+    points: [
+      'Insurance-sector experience with Aviva Life Insurance and Max Life Insurance',
+      'Adds strength in trust, relationship building, and operational consistency',
+    ],
+  },
+];
+
+const highlights = [
+  {
+    value: '4',
+    label: 'Branches',
+  },
+  {
+    value: '2016',
+    label: 'Since',
+  },
+  {
+    value: 'Expert',
+    label: 'Experienced Team',
+  },
+  {
+    value: 'Premium',
+    label: 'Care',
   },
 ];
 
 const milestones = [
   {
     year: '2016',
-    title: 'Naturals, Perumbakkam',
+    title: 'Perumbakkam',
   },
   {
     year: '2017',
-    title: 'Naturals, Sholinganallur',
+    title: 'Sholinganallur',
   },
   {
     year: '2019',
-    title: 'Naturals, ECR Link Road',
+    title: 'ECR Link Road',
   },
   {
     year: '2024',
-    title: 'Naturals, Nookampalayam',
+    title: 'Nookampalayam',
   },
   {
     year: '2025',
-    title: 'International Expansion (Dubai)',
+    title: 'Dubai Expansion',
+  },
+];
+
+const storyBlocks = [
+  {
+    title: 'Corporate Experience',
+    text: 'Priya Arun and Arun Asok bring strong professional foundations from banking, automotive, technology, and insurance backgrounds.',
+  },
+  {
+    title: 'Customer-Centric Vision',
+    text: 'Their shared vision is to build Naturals salons shaped by thoughtful systems, consistent service, and warm customer care.',
+  },
+  {
+    title: 'Growing Naturals Journey',
+    text: 'The journey spans branches across Chennai and continues internationally with the Dubai expansion.',
   },
 ];
 
 function AboutUs() {
   return (
     <section className="franchise-story" id="about-us">
-      <div className="story-intro">
-        <div className="section-heading">
-          <p>About Us</p>
-          <h2>From Corporate Paths to Customer-Centric Salons</h2>
+      <div className="about-showcase">
+        <div className="about-copy-panel">
+          <div className="section-heading">
+            <p>About Us</p>
+            <h2>From Corporate Careers to Salon Entrepreneurship</h2>
+          </div>
+          <p className="story-lead">
+            At Naturals, every salon experience is designed around care,
+            confidence, and customer happiness.
+          </p>
         </div>
-        <p className="story-copy">
-          Priya Arun and Arun Asok transitioned from successful professional careers into
-          entrepreneurship with a shared vision: to build premium Naturals salons defined by
-          consistent service, thoughtful systems, and memorable customer care.
-        </p>
+
+        <div className="about-story-list" aria-label="About Naturals story highlights">
+          {storyBlocks.map((block) => (
+            <article className="about-story-block" key={block.title}>
+              <h3>{block.title}</h3>
+              <p>{block.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       <div className="founder-grid">
@@ -54,7 +104,20 @@ function AboutUs() {
           <article className="founder-card" key={founder.name}>
             <span>{founder.role}</span>
             <h3>{founder.name}</h3>
-            <p>{founder.bio}</p>
+            <ul>
+              {founder.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+
+      <div className="about-highlight-grid" aria-label="Naturals highlights">
+        {highlights.map((highlight) => (
+          <article className="about-highlight-card" key={highlight.label}>
+            <strong>{highlight.value}</strong>
+            <span>{highlight.label}</span>
           </article>
         ))}
       </div>
@@ -62,7 +125,7 @@ function AboutUs() {
       <div className="timeline-block">
         <div className="section-heading compact-heading">
           <p>The Naturals Journey</p>
-          <h2>Growth Across Chennai and Beyond</h2>
+          <h2>Growth Timeline</h2>
         </div>
         <div className="timeline">
           {milestones.map((milestone) => (

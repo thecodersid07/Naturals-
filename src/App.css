@@ -2168,13 +2168,14 @@ body {
   position: relative;
   font-size: 0.9rem;
   font-weight: 700;
+  transition: color 180ms ease;
 }
 
-.nav-links a:first-child {
+.nav-links a.active {
   color: var(--purple-600);
 }
 
-.nav-links a:first-child::after {
+.nav-links a.active::after {
   content: "";
   position: absolute;
   left: 0;
@@ -2182,6 +2183,8 @@ body {
   bottom: -1.1rem;
   height: 3px;
   background: var(--purple-600);
+  transform-origin: center;
+  animation: navUnderlineIn 160ms ease both;
 }
 
 .nav-appointment {
@@ -2198,6 +2201,18 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: background 220ms ease, transform 220ms ease, border-color 220ms ease;
+}
+
+@keyframes navUnderlineIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .nav-appointment:hover {
@@ -2392,7 +2407,7 @@ body {
     justify-content: flex-start;
   }
 
-  .nav-links a:first-child::after {
+  .nav-links a.active::after {
     display: none;
   }
 
@@ -2638,5 +2653,587 @@ body {
 
   .signature-group-visual {
     min-height: 240px;
+  }
+}
+
+/* Premium typography system */
+:root {
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.nav-links,
+.nav-appointment,
+.button,
+.footer-cta,
+.submit-button,
+.contact-actions a,
+.form-field label,
+.form-field input,
+.form-field select,
+.form-field textarea,
+.branch-card span,
+.founder-card span,
+.timeline-item span,
+.product-card span,
+.employee-details span,
+.signature-group-content > span,
+.membership-card-copy span,
+.membership-ribbon,
+.success-message {
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+.hero h1,
+.section-heading h2,
+.founder-card h3,
+.timeline-item h3,
+.corner-card h3,
+.service-card h3,
+.product-card h3,
+.employee-details h3,
+.signature-group-content h3,
+.membership-card-copy h3,
+.footer h2 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  max-width: 940px;
+  font-size: clamp(3.25rem, 6.2vw, 6.1rem);
+  line-height: 0.96;
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.25rem, 4.5vw, 4.2rem);
+  line-height: 1.06;
+}
+
+.services-section .section-heading h2 {
+  font-size: clamp(2.2rem, 3.8vw, 3.45rem);
+  letter-spacing: 0.04em;
+}
+
+.founder-card h3,
+.signature-group-content h3,
+.membership-card-copy h3 {
+  line-height: 1.04;
+}
+
+.timeline-item h3,
+.corner-card h3,
+.employee-details h3,
+.product-card h3 {
+  line-height: 1.18;
+}
+
+.service-card h3 {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+}
+
+.tagline,
+.story-copy,
+.product-copy p,
+.smile-intro > p,
+.contact-info > p,
+.founder-card p,
+.product-card p,
+.employee-details p,
+.signature-group-content p,
+.membership-content > p,
+.membership-card-copy p,
+.footer p {
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+.tagline {
+  font-size: clamp(1.08rem, 1.7vw, 1.42rem);
+  font-weight: 500;
+}
+
+.nav-links {
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.button,
+.footer-cta,
+.submit-button,
+.nav-appointment,
+.contact-actions a {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.section-heading p,
+.eyebrow,
+.branch-card span,
+.founder-card span,
+.timeline-item span,
+.product-card span,
+.employee-details span,
+.signature-group-content > span,
+.membership-card-copy span {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.form-field label {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: clamp(2.7rem, 12vw, 4.25rem);
+    line-height: 1;
+  }
+
+  .section-heading h2,
+  .services-section .section-heading h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.08;
+  }
+
+  .nav-links {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* Premium About Us section */
+.franchise-story {
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-story::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(212, 175, 55, 0.13), transparent 24rem),
+    radial-gradient(circle at 88% 18%, rgba(168, 85, 247, 0.14), transparent 28rem);
+  pointer-events: none;
+}
+
+.about-showcase,
+.about-highlight-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.about-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.85fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.about-copy-panel {
+  min-width: 0;
+}
+
+.about-copy-panel .section-heading {
+  margin-bottom: 1.35rem;
+}
+
+.about-story-list {
+  display: grid;
+  gap: 1rem;
+  max-width: 760px;
+}
+
+.about-story-block {
+  padding: 1rem 1.1rem;
+  border-left: 3px solid rgba(212, 175, 55, 0.72);
+  border-radius: 0 18px 18px 0;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.about-story-block h3 {
+  margin: 0;
+  color: var(--gold-soft);
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.1;
+}
+
+.about-story-block p {
+  max-width: 66ch;
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.about-visual-card {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.32);
+  border-radius: 28px;
+  background:
+    linear-gradient(145deg, rgba(59, 10, 87, 0.72), rgba(8, 4, 13, 0.96)),
+    var(--card-black);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
+  animation: aboutFadeUp 720ms cubic-bezier(0.2, 0.75, 0.22, 1) both;
+}
+
+.about-visual-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  opacity: 0.78;
+  transform: scale(1.01);
+  transition: transform 420ms ease, opacity 420ms ease;
+}
+
+.about-visual-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 4, 13, 0.08), rgba(8, 4, 13, 0.84)),
+    radial-gradient(circle at top left, rgba(212, 175, 55, 0.18), transparent 52%);
+  pointer-events: none;
+}
+
+.about-visual-card:hover img {
+  opacity: 0.9;
+  transform: scale(1.045);
+}
+
+.about-visual-content {
+  position: absolute;
+  left: 1.4rem;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 1;
+  padding: 1.25rem;
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 20px;
+  background: rgba(18, 8, 28, 0.78);
+  backdrop-filter: blur(14px);
+}
+
+.about-visual-content span {
+  display: inline-flex;
+  color: var(--gold-soft);
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-visual-content strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--ink);
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.about-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+.about-highlight-card {
+  min-width: 0;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(26, 13, 39, 0.94), rgba(18, 8, 28, 0.98)),
+    var(--card-black);
+  box-shadow: var(--shadow);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.about-highlight-card:hover {
+  border-color: rgba(212, 175, 55, 0.48);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+
+.about-highlight-card strong,
+.about-highlight-card span {
+  display: block;
+}
+
+.about-highlight-card strong {
+  color: var(--gold-soft);
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3.4vw, 2.75rem);
+  line-height: 1;
+}
+
+.about-highlight-card span {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.franchise-story .founder-grid {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(2rem, 5vw, 4rem);
+}
+
+.franchise-story .founder-card {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.franchise-story .founder-card h3 {
+  margin-top: 0;
+}
+
+.franchise-story .founder-card ul {
+  display: grid;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.franchise-story .founder-card li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.franchise-story .founder-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--gold);
+  transform: translateY(-50%);
+}
+
+.franchise-story .timeline-block {
+  position: relative;
+  z-index: 1;
+}
+
+.franchise-story .timeline {
+  align-items: stretch;
+}
+
+.franchise-story .timeline-item {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+.franchise-story .timeline-item span {
+  line-height: 1;
+}
+
+.franchise-story .timeline-item h3 {
+  margin: 0;
+}
+
+@keyframes aboutFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1020px) {
+  .about-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual-card,
+  .about-visual-card img {
+    min-height: 360px;
+  }
+
+  .about-highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .franchise-story .timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .about-visual-card,
+  .about-visual-card img {
+    min-height: 300px;
+  }
+
+  .about-visual-content {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    padding: 1rem;
+  }
+
+  .about-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story-block {
+    padding: 0.9rem 1rem;
+  }
+
+  .franchise-story .timeline {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About Us content organization refinements */
+.franchise-story .about-showcase {
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+  align-items: start;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+.franchise-story .about-copy-panel .section-heading {
+  max-width: 680px;
+  margin-bottom: 1.15rem;
+}
+
+.franchise-story .about-copy-panel .section-heading h2 {
+  max-width: 680px;
+  font-size: clamp(2.45rem, 4.15vw, 3.5rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.franchise-story .story-lead {
+  max-width: 58ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.16rem);
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+.franchise-story .about-story-list {
+  align-self: stretch;
+  max-width: none;
+  gap: 0.9rem;
+}
+
+.franchise-story .about-story-block {
+  display: grid;
+  align-content: start;
+  min-height: 0;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-left: 3px solid rgba(212, 175, 55, 0.68);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(26, 13, 39, 0.92), rgba(18, 8, 28, 0.98)),
+    var(--card-black);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+}
+
+.franchise-story .about-story-block h3 {
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.15;
+}
+
+.franchise-story .about-story-block p {
+  max-width: 62ch;
+  margin-top: 0.5rem;
+  line-height: 1.68;
+}
+
+.franchise-story .founder-grid {
+  align-items: stretch;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.franchise-story .founder-card {
+  height: 100%;
+  min-height: 0;
+  padding: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+.franchise-story .founder-card span {
+  margin-bottom: 0.15rem;
+}
+
+.franchise-story .founder-card h3 {
+  font-size: clamp(2rem, 3.3vw, 3rem);
+  line-height: 1.05;
+}
+
+.franchise-story .founder-card ul {
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 1020px) {
+  .franchise-story .about-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .franchise-story .about-copy-panel .section-heading,
+  .franchise-story .about-copy-panel .section-heading h2,
+  .franchise-story .story-lead {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 640px) {
+  .franchise-story .about-copy-panel .section-heading h2 {
+    max-width: 100%;
+    font-size: clamp(2.15rem, 10vw, 2.375rem);
+    line-height: 1.12;
+  }
+
+  .franchise-story .story-lead {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .franchise-story .about-story-list {
+    gap: 0.8rem;
+  }
+
+  .franchise-story .founder-grid {
+    margin-top: 1.75rem;
   }
 }
