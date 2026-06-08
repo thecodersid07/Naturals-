@@ -38,7 +38,7 @@ function SocialMedia() {
               className="instagram-follow-button"
               href={branch.instagram}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               aria-label={`Follow ${branch.name} on Instagram`}
             >
               <InstagramIcon />
