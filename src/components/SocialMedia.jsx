@@ -47,8 +47,6 @@ function SocialMedia() {
           </article>
         ))}
       </div>
-
-      <p className="instagram-note">Official branch handles will be updated soon.</p>
     </section>
   );
 }
