@@ -4,7 +4,7 @@ const navItems = [
   { id: 'top', label: 'Home' },
   { id: 'about-us', label: 'About Us' },
   { id: 'services', label: 'Services' },
-  { id: 'social-media', label: 'Social Media' },
+  { id: 'social-media', label: 'Instagram' },
   { id: 'recruitment', label: 'Recruitment' },
   { id: 'contact', label: 'Contact Us' },
 ];
